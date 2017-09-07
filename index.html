@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Toc Toe</title>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.js"></script>
+    <script src="https://use.fontawesome.com/6998e55726.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <script type="text/javascript" src="js/tic-tac-toe.js"></script>
+
+
+<body ng-controller = "AppCtrl">
+    <header>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                Tic Tac Toe
+              </a>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="score-board">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="user-score">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        <span class="pull-right">{{ humanScore }}</span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="computer-score">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                        <span class="pull-right">{{ computerScore }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gameBoardArea">
+            <button ng-repeat="board in gameBoard" ng-click="play(board.value)" id="{{board.value}}" class="tic-tac-boxes"></button>
+        </div>
+        <div class="game-functions">
+            <button class="btn btn-primary" ng-click="reset()">Restart the game</button>
+            <span class="btn btn-warning remaining-moves">Remaining moves: {{ 8 - round}}</span>
+        </div>
+    </div>
+
+    <div class="screen-hover" ng-show="hovering">
+        <div class="show-result">
+            {{ whoWin }}
+        </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

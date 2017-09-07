@@ -1,2 +1,2 @@
-# tic-tac-toe-with-angularjs
-Tic Tac Toe game with Angularjs and Bootstrap
+# tic-tac-toe-angularjs
+Tic Tac Toe with Angularjs + Bootstrap
